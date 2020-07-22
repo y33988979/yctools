@@ -1,0 +1,12 @@
+sudo qemu-system-aarch64 \
+    -M  virt \
+    -cpu cortex-a53 \
+    -smp 2 \
+    -m 1024M \
+    -kernel ./linux-4.10/out_aarch64/arch/arm64/boot/Image \
+    -nographic \
+    -append "root=/dev/ram0 rw rootfstype=ext4 console=ttyAMA0 init=/linuxrc ignore_loglevel" \
+    -initrd ./rootfs/ramdisk.img \
+    -net nic,vlan=0 -net tap,vlan=0,ifname=tap0 \
+    -fsdev local,security_model=passthrough,id=fsdev0,path=/nfsroot \
+    -device virtio-9p-pci,id=fs0,fsdev=fsdev0,mount_tag=hostshare
