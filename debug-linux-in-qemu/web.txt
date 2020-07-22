@@ -1,0 +1,8 @@
+
+
+用Qemu搭建aarch64学习环境
+https://www.cnblogs.com/pengdonglin137/p/6431234.html
+
+用Qemu搭建x86_64学习环境
+https://www.cnblogs.com/pengdonglin137/p/6442624.html
+
